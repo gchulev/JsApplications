@@ -1,11 +1,28 @@
 function solve() {
+    let busId = 'depot';
+    let stopName = '';
+
 
     function depart() {
-        console.log('Depart TODO...');
+        fetch(`http://localhost:3030/jsonstore/bus/schedule/${busId}`)
+            .then(response => response.json())
+            .then(handleData)
+            .catch(error => console.log(error));
+
+
+        function handleData(data) {
+            document.querySelector('span[class="info"]').textContent = `Next stop ${data.name}`;
+            document.getElementById('depart').disabled = true;
+            document.getElementById('arrive').disabled = false;
+            busId = data.next;
+            stopName = data.name;
+        }
     }
 
     function arrive() {
-        console.log('Arrive TODO...');
+        document.querySelector('span[class="info"]').textContent = `Arriving at ${stopName}`;
+        document.getElementById('depart').disabled = false;
+        document.getElementById('arrive').disabled = true;
     }
 
     return {
