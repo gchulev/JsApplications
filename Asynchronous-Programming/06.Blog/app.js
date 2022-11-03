@@ -1,6 +1,7 @@
 function attachEvents() {
     document.getElementById('btnLoadPosts').addEventListener('click', loadPosts);
-
+    loadPosts();
+    
     async function loadPosts() {
         const selectIdElm = document.getElementById('posts');
 
@@ -19,6 +20,7 @@ function attachEvents() {
             }).catch(error => console.log(error));
 
         document.getElementById('btnViewPost').addEventListener('click', getPostInfo);
+        getPostInfo();
     }
 
     async function getPostInfo() {
