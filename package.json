@@ -1,11 +1,30 @@
 {
   "dependencies": {
     "chai": "^4.3.6",
+    "lit-html": "^2.4.0",
     "mocha": "^10.1.0",
     "playwright-chromium": "^1.27.1"
   },
   "devDependencies": {
     "@playwright/test": "^1.27.1"
   },
-  "scripts": {}
+  "scripts": {},
+  "name": "js-applications",
+  "version": "1.0.0",
+  "main": "playwright.config.js",
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gchulev/JsApplications.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gchulev/JsApplications/issues"
+  },
+  "homepage": "https://github.com/gchulev/JsApplications#readme",
+  "description": ""
 }
