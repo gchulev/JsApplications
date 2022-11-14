@@ -5,8 +5,8 @@ const host = 'http://localhost:5500'; // Application host (NOT service host - th
 
 const interval = 300;
 const timeout = 6000;
-const DEBUG = false;
-const slowMo = 500;
+const DEBUG = true;
+const slowMo = 2000;
 
 const mockData = {
   catalog: [
