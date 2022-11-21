@@ -31,6 +31,7 @@ page('/edit/:id', renderMiddleware, showEditView);
 page('/login', renderMiddleware, showLoginView);
 page('/register', renderMiddleware, showRegisterView);
 page('/myFurniture', renderMiddleware, showMyFurnitureView);
+page('*', 'Page Not Found!');
 
 page.start();
 updateNav();

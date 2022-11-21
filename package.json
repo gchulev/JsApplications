@@ -3,10 +3,11 @@
     "chai": "^4.3.6",
     "lit-html": "^2.4.0",
     "mocha": "^10.1.0",
-    "playwright-chromium": "^1.27.1"
+    "page": "^1.11.6"
   },
   "devDependencies": {
-    "@playwright/test": "^1.27.1"
+    "@playwright/test": "^1.27.1",
+    "playwright-chromium": "^1.27.1"
   },
   "scripts": {},
   "name": "js-applications",
