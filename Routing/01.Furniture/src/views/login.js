@@ -40,6 +40,6 @@ async function onSubmit(event) {
 
     await login(email, password);
     event.target.reset();
-
+    // Add User to session storage
     page.redirect('/');
 }

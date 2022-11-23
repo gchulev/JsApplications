@@ -1,4 +1,4 @@
-import { render } from '../../node_modules/lit-html/lit-html.js';
+import { render, html } from '../../node_modules/lit-html/lit-html.js';
 import { default as page } from '../../node_modules/page/page.mjs';
 
 import { showCatalogView } from './src/views/catalog.js';
@@ -31,7 +31,7 @@ page('/edit/:id', renderMiddleware, showEditView);
 page('/login', renderMiddleware, showLoginView);
 page('/register', renderMiddleware, showRegisterView);
 page('/myFurniture', renderMiddleware, showMyFurnitureView);
-page('*', 'Page Not Found!');
+page('*', render(html`<h2>Resource Not Found!</h2>`, mainElm));
 
 page.start();
 updateNav();

@@ -1,4 +1,4 @@
-import { html } from '../../../node_modules/lit-html/lit-html.js';
+import { html } from '../../../../node_modules/lit-html/lit-html.js';
 
 function homeViewTemplate() {
     return html`
@@ -12,5 +12,5 @@ function homeViewTemplate() {
 }
 
 export function showHomeView(ctx) {
-    ctx.renderView(homeViewTemplate);
+    ctx.renderView(homeViewTemplate());
 }
