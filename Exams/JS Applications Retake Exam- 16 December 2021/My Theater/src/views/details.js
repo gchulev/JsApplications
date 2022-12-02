@@ -18,12 +18,14 @@ const detailsTemplate = async (item, user, onDelete, onLike) => html`
             <p>${item.description}</p>
             <h4>Date: ${item.date}</h4>
             <h4>Author: ${item.author}</h4>
-            <div class="buttons">
+            
                 ${user
                 ?  html`${user._id === item._ownerId
                     ? html`
+                    <div class="buttons"></div>
                     <a @click=${onDelete} class="btn-delete" href="javascript:void(0)">Delete</a>
-                    <a class="btn-edit" href="/edit/${item._id}">Edit</a>`
+                    <a class="btn-edit" href="/edit/${item._id}">Edit</a>
+                    </div>`
                     : html`
                         ${await getLikesForEventFromSpecificUser(item._id, user._id) === 0
                         ? html `
@@ -31,7 +33,7 @@ const detailsTemplate = async (item, user, onDelete, onLike) => html`
                         : nothing}
                     ` }`
                 : nothing}
-            </div>
+            
             <p class="likes">Likes: ${await getTotalTheaterLikes(item._id)}</p>
         </div>
     </div>

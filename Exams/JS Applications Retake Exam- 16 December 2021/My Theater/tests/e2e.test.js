@@ -3,7 +3,7 @@ const { expect } = require('chai');
 
 const host = 'http://localhost:3000'; // Application host (NOT service host - that can be anything)
 const interval = 500;
-const DEBUG = true;
+const DEBUG = false;
 const slowMo = 500;
 
 const mockData = require('./mock-data.json');
@@ -590,7 +590,7 @@ describe('E2E tests', function () {
         });
     });
 
-    describe('BONUS : Like functionality  [ 15 Points ]', async () => {
+    describe.only('BONUS : Like functionality  [ 15 Points ]', async () => {
 
         it('Like button is NOT visible for guest users [ 2.5 Points ]', async () => {
             await page.goto(host);
@@ -664,7 +664,7 @@ describe('E2E tests', function () {
             expect(await page.isVisible('btn-like')).to.be.false;
         });
 
-        it.only('Like button should be hidden(not visible) after a click on it [ 2.5 Points ]', async () => {
+        it('Like button should be hidden(not visible) after a click on it [ 2.5 Points ]', async () => {
             // Login user
             const user = mockData.users[0];
             const data = mockData.catalog[2];
